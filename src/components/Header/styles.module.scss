@@ -1,4 +1,33 @@
-.top-navigation {
-  display: flex;
-  background-color: rgb(242, 242, 242);
+.header-container {
+}
+.top-navigation-container {
+  background-color: $color-dark-gray;
+  height: 2rem;
+  .top-navigation {
+    max-width: $container-max-width;
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      text-decoration: none;
+      margin-right: 1rem;
+      padding: 0.4rem;
+      color: $color-text-gray;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background-color: $color-text-gray-hover;
+      }
+    }
+  }
+}
+
+.bottom-navigation-container {
+  background-color: $color-dark-gray;
+
+  .bottom-navigation {
+  }
 }
