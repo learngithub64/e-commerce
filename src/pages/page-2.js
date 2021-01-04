@@ -1,16 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
+import SEO from "@components/seo"
+import CompTesting from "@components/CompTesting"
+import Layout from "@components/Layout/"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const SecondPage = () => (
+const IndexPage = () => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <SEO title="Not Home" />
+    <h1>Hi people</h1>
   </Layout>
 )
 
-export default SecondPage
+export default IndexPage

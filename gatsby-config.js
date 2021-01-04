@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -5,6 +7,28 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@components": path.resolve(__dirname, "src/components"),
+          // "@reducers": path.resolve(__dirname, "src/reducers"),
+          // "@functions": path.resolve(__dirname, "src/functions"),
+          "@styles": path.resolve(__dirname, "src/styles"),
+          // "@images": path.resolve(__dirname, "src/images"),
+          // "@views": path.resolve(__dirname, "src/views"),
+          // "@store": path.resolve(__dirname, "src/store"),
+        },
+        extensions: [],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        data: `@import './src/styles/styles.scss';`,
+      },
+      includePaths: ["./src/styles"],
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
