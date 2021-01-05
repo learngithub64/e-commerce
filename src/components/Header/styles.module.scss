@@ -20,14 +20,39 @@
       }
       &:hover {
         background-color: $color-text-gray-hover;
+        cursor: pointer;
       }
     }
   }
 }
 
 .bottom-navigation-container {
-  background-color: $color-dark-gray;
+  background-color: $color-primary;
 
+  .bottom-navigation-wrapper {
+    max-width: $container-max-width;
+    width: 100%;
+  }
   .bottom-navigation {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .bottom-left {
+      p {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+    }
+    .bottom-right {
+      display: flex;
+      p {
+        margin-right: 2rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }

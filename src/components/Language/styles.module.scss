@@ -1,0 +1,13 @@
+.selected-language {
+  color: crimson !important;
+  &:hover {
+    background-color: $color-text-gray-hover;
+  }
+}
+
+.language {
+  color: $color-text-gray;
+  &:hover {
+    background-color: $color-text-gray-hover;
+  }
+}
