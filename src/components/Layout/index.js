@@ -16,14 +16,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <Fragment>
+    <div className={styles.app}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>
         <div className={styles.container}>{children}</div>
       </main>
 
       <footer></footer>
-    </Fragment>
+    </div>
   )
 }
 

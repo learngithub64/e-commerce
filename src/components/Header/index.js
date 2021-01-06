@@ -3,25 +3,30 @@ import styles from "./styles.module.scss"
 import { Link } from "gatsby"
 import { useIntl } from "gatsby-plugin-intl"
 import Language from "@components/Language"
+import Container from "@components/Container"
 
 const Header = () => {
   const intl = useIntl()
   const languages = ["en", "fr", "de"]
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.topNavigationContainer}>
-        <div className={styles.topNavigation}>
-          <Language />
-          <Link to="/contact-us">Contact Us</Link>
-          <Link to="/help">
-            {intl.formatMessage({ id: "header.topNavigation.help" })}
-          </Link>
-        </div>
+    <header className={styles.headerWrapperr}>
+      <div className={styles.topNavigationWrapper}>
+        <Container>
+          <div className={styles.topNavigationContainer}>
+            <div className={styles.topNavigation}>
+              <Language />
+              <Link to="/contact-us">Contact Us</Link>
+              <Link to="/help">
+                {intl.formatMessage({ id: "header.topNavigation.help" })}
+              </Link>
+            </div>
+          </div>
+        </Container>
       </div>
 
-      <div className={styles.bottomNavigationContainer}>
-        <div className={styles.bottomNavigationWrapper}>
-          <div className={styles.bottomNavigation}>
+      <div className={styles.bottomNavigationWrapper}>
+        <Container>
+          <div className={styles.bottomNavigationContainer}>
             <div className={styles.bottomLeft}>
               <p>e-COMMERCE</p>
             </div>
@@ -34,13 +39,14 @@ const Header = () => {
               ></input>
             </div>
             <div className={styles.bottomRight}>
+              <p>Categories</p>
               <p>Account</p>
               <p>Basket</p>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
-    </div>
+    </header>
   )
 }
 
