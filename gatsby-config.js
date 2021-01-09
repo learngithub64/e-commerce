@@ -16,7 +16,7 @@ module.exports = {
           // "@functions": path.resolve(__dirname, "src/functions"),
           "@styles": path.resolve(__dirname, "src/styles"),
           // "@images": path.resolve(__dirname, "src/images"),
-          // "@views": path.resolve(__dirname, "src/views"),
+          "@views": path.resolve(__dirname, "src/views"),
           // "@store": path.resolve(__dirname, "src/store"),
         },
         extensions: [],
@@ -47,11 +47,26 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/static/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `md-data`,
+        path: `${__dirname}/src/md-data`,
+      },
+    },
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
