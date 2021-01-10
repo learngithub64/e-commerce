@@ -2,8 +2,8 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "@components/Header"
+import Footer from "@components/Footer"
 import styles from "./styles.module.scss"
-import Container from "@components/Container"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,11 +19,8 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.app}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main>
-        <Container>{children}</Container>
-      </main>
-
-      <footer></footer>
+      <main>{children}</main>
+      <Footer />
     </div>
   )
 }

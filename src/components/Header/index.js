@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { useIntl } from "gatsby-plugin-intl"
 import Language from "@components/Language"
 import Container from "@components/Container"
+import Logo from "@components/Logo"
 
 const Header = () => {
   const intl = useIntl()
@@ -28,7 +29,7 @@ const Header = () => {
         <Container>
           <div className={styles.bottomNavigationContainer}>
             <div className={styles.bottomLeft}>
-              <p>e-COMMERCE</p>
+              <Logo />
             </div>
             <div className={styles.bottomMiddle}>
               <input
