@@ -1,7 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styles from "./styles.module.scss"
 import Img from "gatsby-image"
+import { useIntl } from "react-intl"
 
 const Categories = () => {
   const categories = useStaticQuery(graphql`
@@ -12,6 +13,7 @@ const Categories = () => {
         edges {
           node {
             frontmatter {
+              id
               title
               imageAlt
               image {
@@ -28,6 +30,8 @@ const Categories = () => {
     }
   `)
 
+  const intl = useIntl()
+
   return (
     <div className={styles.categoriesWrapper}>
       <h1>Main Categories</h1>
@@ -35,11 +39,13 @@ const Categories = () => {
         {categories?.allMarkdownRemark?.edges?.map(
           ({ node: { frontmatter: category } }) => (
             <div className={styles.categoryContainer}>
-              <Img
-                fluid={category?.image?.childImageSharp?.fluid}
-                alt={category?.imageAlt}
-              />
-              <h3>{category?.title}</h3>
+              <Link to={`/${intl?.locale}/${category?.id}`}>
+                <Img
+                  fluid={category?.image?.childImageSharp?.fluid}
+                  alt={category?.imageAlt}
+                />
+                <h3>{category?.title}</h3>
+              </Link>
             </div>
           )
         )}

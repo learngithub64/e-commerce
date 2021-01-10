@@ -8,7 +8,6 @@ import Logo from "@components/Logo"
 
 const Header = () => {
   const intl = useIntl()
-  const languages = ["en", "fr", "de"]
   return (
     <header className={styles.headerWrapperr}>
       <div className={styles.topNavigationWrapper}>
@@ -29,7 +28,7 @@ const Header = () => {
         <Container>
           <div className={styles.bottomNavigationContainer}>
             <div className={styles.bottomLeft}>
-              <Logo />
+              <Logo link />
             </div>
             <div className={styles.bottomMiddle}>
               <input
